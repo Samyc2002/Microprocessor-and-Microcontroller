@@ -1,0 +1,21 @@
+# ORG 7000H
+# BEGIN 7000H
+	   LHLD 7501
+	   LDA 7503
+	   MOV B,A
+	   MVI C,08
+
+LOOP:	   DAD H
+	   MOV A,H
+	   SUB B
+	   JC AHEAD
+	   MOV H,A
+	   INR L
+
+AHEAD:	   DCR C
+	   JNZ LOOP
+	   SHLD 7504
+	   HLT
+
+# ORG 7501H
+# DB 25H,00H,05H

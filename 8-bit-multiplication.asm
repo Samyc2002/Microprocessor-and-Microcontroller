@@ -1,0 +1,39 @@
+;;V1
+# ORG 7000H
+# BEGIN 7000H
+	   LHLD 7501
+	   XCHG
+	   LDA 7503
+	   LXI H,0000
+	   MVI C,08
+
+LOOP:	   DAD H
+	   RAL
+	   JNC AHEAD
+	   DAD D
+
+AHEAD:	   DCR C
+	   JNZ LOOP
+	   SHLD 7504
+	   HLT
+
+;;V2
+# ORG 7501H
+# DB 25H,00H,05H
+
+
+
+# ORG 7000H
+# BEGIN 7000H
+    LHLD 7501
+    XCHG
+    LDA 7503
+
+LOOP:   DAD D
+    DCR A
+    JNZ LOOP
+	SHLD 7504
+	HLT
+
+# ORG 7501H
+# DB 25H,00H,05H
