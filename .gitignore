@@ -1,2 +1,5 @@
 # Excluding the zip files
 */*.zip
+*/*.mcu8051ide
+*/*.vhc
+*/*.adf
