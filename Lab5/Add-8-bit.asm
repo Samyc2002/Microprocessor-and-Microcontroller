@@ -44,7 +44,7 @@ DELAY:
 DELAY1:
     MOV R7, #255
 HERE:
-    DNJZ R3, here
+    DNJZ R3, HERE
     DNJZ R2, DELAY1
 RET
 
