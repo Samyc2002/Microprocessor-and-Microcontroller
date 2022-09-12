@@ -18,7 +18,7 @@ ADDER_8BIT:
     MOV R2, #42H                ; Move 42H address to R2
     MOV R4, #44H                ; Move 44H address to R4
 SAVE:
-    MOV @R2, A                  ; Store the sum in R2
+    MOV R2, A                  ; Store the sum in R2
     MOV R4, C                   ; Storing Carry in the memory
 RET
 
