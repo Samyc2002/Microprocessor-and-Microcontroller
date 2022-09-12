@@ -8,6 +8,8 @@ INIT:
     MOV R1, #50H                ; Setting destinatin address to 50H
     CLR C                       ; Clearing carry flag
     MOV P1, #00H                ; Setting up port
+    MOV R2, #42H                ; Move 42H address to R2
+    MOV R4, #44H                ; Move 44H address to R4
 RET
 
 ADDER_8BIT:
@@ -15,8 +17,6 @@ ADDER_8BIT:
     MOV A, @R0                  ; Take value from source to registor A
     ADD A, @R1                  ; Add the numbers
     JNC SAVE
-    MOV R2, #42H                ; Move 42H address to R2
-    MOV R4, #44H                ; Move 44H address to R4
 SAVE:
     MOV R2, A                  ; Store the sum in R2
     MOV R4, C                   ; Storing Carry in the memory
