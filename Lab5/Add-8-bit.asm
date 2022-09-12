@@ -25,10 +25,10 @@ RET
 NIBBLE_8BIT:
     ;Write the code to extract upper and lower nibbles and to call LED program
     MOV A, @R2                  ; Moving R2 to A
-    ANI A, #F0H                 ; Computing Upper nibble
+    ANL A, #F0H                 ; Computing Upper nibble
     MOV R5, A                  ; Storing the upper nibble in R5
     MOV A, @R2                  ; Moving R2 to A
-    ANI A, #0FH                 ; Computing Lower nibble
+    ANL A, #0FH                 ; Computing Lower nibble
     MOV R6, A                  ; Storing the lower nibble in R5
 RET
 
