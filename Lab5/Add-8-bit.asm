@@ -31,6 +31,7 @@ NIBBLE_8BIT:
     MOV A, R2                  ; Moving R2 to A
     ANL A, #0FH                 ; Computing Lower nibble
     MOV R6, A                  ; Storing the lower nibble in R5
+    ACALL LED         ; Show LED
 RET
 
 LED:
@@ -55,7 +56,6 @@ MAIN:
     ACALL INIT
     ACALL ADDER_8BIT ;Adding the two values
     ACALL NIBBLE_8BIT ;Separate the nibbles and Display result on led(sum)
-    ACALL LED         ; Show LED
 LOOP:
     SJMP LOOP
 END
