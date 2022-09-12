@@ -17,6 +17,7 @@ ADDER_8BIT:
     MOV A, @R0                  ; Take value from source to registor A
     ADD A, @R1                  ; Add the numbers
     JNC SAVE
+    INC R2
 SAVE:
     MOV R2, A                  ; Store the sum in R2
     MOV R4, C                   ; Storing Carry in the memory
