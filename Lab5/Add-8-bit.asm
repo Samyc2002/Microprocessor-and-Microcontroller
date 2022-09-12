@@ -17,18 +17,18 @@ ADDER_8BIT:
     MOV A, @R0                  ; Take value from source to registor A
     ADD A, @R1                  ; Add the numbers
     JNC SAVE
+    ;MOV R4, C                   ; Storing Carry in the memory
     INC R2
 SAVE:
     MOV R2, A                  ; Store the sum in R2
-    MOV R4, C                   ; Storing Carry in the memory
 RET
 
 NIBBLE_8BIT:
     ;Write the code to extract upper and lower nibbles and to call LED program
-    MOV A, @R2                  ; Moving R2 to A
-    ANL A, #F0H                 ; Computing Upper nibble
+    MOV A, R2                  ; Moving R2 to A
+    ANL A, #0F0H                 ; Computing Upper nibble
     MOV R5, A                  ; Storing the upper nibble in R5
-    MOV A, @R2                  ; Moving R2 to A
+    MOV A, R2                  ; Moving R2 to A
     ANL A, #0FH                 ; Computing Lower nibble
     MOV R6, A                  ; Storing the lower nibble in R5
 RET
@@ -45,8 +45,8 @@ DELAY:
 DELAY1:
     MOV R7, #255
 HERE:
-    DNJZ R3, HERE
-    DNJZ R2, DELAY1
+    DJNZ R3, HERE
+    DJNZ R2, DELAY1
 RET
 
 ;------------------------------------ Main subroutine------------------------------------
