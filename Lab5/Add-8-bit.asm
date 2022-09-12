@@ -55,6 +55,7 @@ MAIN:
     ACALL INIT
     ACALL ADDER_8BIT ;Adding the two values
     ACALL NIBBLE_8BIT ;Separate the nibbles and Display result on led(sum)
+    ACALL LED         ; Show LED
 LOOP:
     SJMP LOOP
 END
