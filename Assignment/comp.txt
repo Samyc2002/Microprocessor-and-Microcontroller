@@ -1,0 +1,13 @@
+main: 	clr p1.2
+	acall delay
+	set p1.2
+	acall delay
+	sjmp main
+delay:	mov TMOD, #01H ;select timer 0 mode 1
+	mov TL0, #0CH
+	mov TH0,#OFEH
+	mov TCON, #10H; start timer or SETB TR0
+wait:	JNV TF0; wait for overflow
+	clr TR0
+	move TF0
+	ret
